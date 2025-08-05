@@ -11,7 +11,16 @@
   "dependencies": {
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.4.5"
+    "next": "15.4.5",
+    "@thirdweb-dev/chains": "^0.1.120",
+    "@thirdweb-dev/sdk": "^4.0.99",
+    "@thirdweb-dev/wagmi-adapter": "^0.2.115",
+    "thirdweb": "^5.105.18",
+    "@thirdweb-dev/auth": "4.1.27",
+    "viem": "^2.33.0",
+    "wagmi": "^2.16.0",
+    "@sophon-labs/account-core": "^1.3.7",
+    "@sophon-labs/account-eip6963": "^1.3.7"
   },
   "devDependencies": {
     "typescript": "^5",

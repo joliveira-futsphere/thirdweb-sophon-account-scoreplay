@@ -53,9 +53,20 @@ export async function isLoggedIn(address?: string) {
     const jwt = (await cookies()).get("jwt");
     debugger;
 
-    const authResult = await thirdwebAuth.verifyJWT({ jwt: jwt?.value || "" });
-    if (!authResult.valid) {
-      return false;
+    let authResult = {
+      valid: false,
+    };
+    try {
+      if (address) {
+        authResult = await thirdwebAuth.verifyJWT({
+          jwt: jwt?.value || "",
+        });
+        if (!authResult.valid) {
+          return false;
+        }
+      }
+    } catch (error: any) {
+      console.error("Error verifying JWT:", error);
     }
 
     return authResult.valid;
